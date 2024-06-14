@@ -16,6 +16,9 @@ mongoose.connect(mongoUrl, err => {
   if (err) throw err;
   console.log("Mongodb connected...");
 });
+app.use("/", (req,res)=>{
+  res.send("hello world")
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
